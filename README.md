@@ -106,8 +106,7 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
-,,,
----
+```
 
 Priority Engine
 
