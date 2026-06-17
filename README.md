@@ -81,6 +81,7 @@ Development Tools
 - VS Code
 
 ---
+,,, text
 
 Project Structure
 
@@ -105,7 +106,7 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
-
+,,,
 ---
 
 Priority Engine
