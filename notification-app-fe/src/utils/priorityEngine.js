@@ -11,15 +11,15 @@ export function getPriorityNotifications(
   return [...notifications]
     .sort((a, b) => {
       const weightDiff =
-        WEIGHTS[b.Type] - WEIGHTS[a.Type];
+        WEIGHTS[b.type] - WEIGHTS[a.type];
 
       if (weightDiff !== 0) {
         return weightDiff;
       }
 
       return (
-        new Date(b.Timestamp) -
-        new Date(a.Timestamp)
+        new Date(b.timestamp) -
+        new Date(a.timestamp)
       );
     })
     .slice(0, limit);

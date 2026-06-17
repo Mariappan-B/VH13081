@@ -1,14 +1,24 @@
 import { useEffect } from "react";
-import { Log } from "./utils/logger";
+import { fetchNotifications } from "./api/notifications";
+import { getPriorityNotifications } from "./utils/priorityEngine";
 
 export default function App() {
   useEffect(() => {
-    Log(
-      "frontend",
-      "info",
-      "page",
-      "Application started"
-    );
+    async function loadData() {
+      const notifications = await fetchNotifications();
+
+      const prioritized = getPriorityNotifications(
+        notifications,
+        10
+      );
+
+      console.log(
+        "Priority Notifications:",
+        prioritized
+      );
+    }
+
+    loadData();
   }, []);
 
   return <h1>Notifications App</h1>;
